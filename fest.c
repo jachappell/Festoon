@@ -1223,7 +1223,7 @@ lconjsub(env)
 static char    *conjlist[] = {"and", "but", "yet", "and", "and"};
 
 X 
-conj(env)
+conjugate(env)
 	E               env;
 {
 	X               v = getxx();
@@ -1306,7 +1306,7 @@ turgid(env)
 	} else if (prob(2 * T)) {
 		v->list.x[i++] = turgid(env);
 		v->list.x[i++] = comma(env);
-		v->list.x[i++] = conj(env);
+		v->list.x[i++] = conjugate(env);
 		v->list.x[i++] = sent(env);
 	} else if (prob(1.5 * T)) {
 		v->list.x[i++] = lconjsub(env);
@@ -1327,7 +1327,7 @@ turgid(env)
 		if (eqn && prob(.5)) {
 			v->list.x[i++] = equation(env);
 			v->list.x[i++] = comma(env);
-			v->list.x[i++] = conj(env);
+			v->list.x[i++] = conjugate(env);
 		}
 		v->list.x[i++] = sent(env);
 	} else
@@ -1644,4 +1644,3 @@ splitup(strlab) char *strlab;
 	label[j++] = '"'; label[j] = '\0';
 	return(label);
 }
-/GO.SYSIN DD fest.c
