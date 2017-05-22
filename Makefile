@@ -28,5 +28,6 @@ clean:
 	rm -rf $(PROG) $(OBJDIR)
 
 install:
+	$(shell mkdir -p $(DESTINATION)/man/man6) 
 	cp festoon $(DESTINATION)/games
 	cp festoon.6 $(DESTINATION)/man/man6
