@@ -29,5 +29,6 @@ clean:
 
 install:
 	$(shell mkdir -p $(DESTINATION)/man/man6) 
+	$(shell mkdir -p $(DESTINATION)//games)
 	cp festoon $(DESTINATION)/games
 	cp festoon.6 $(DESTINATION)/man/man6
